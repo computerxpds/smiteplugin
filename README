@@ -1,0 +1,4 @@
+Simple smite plugin for Craftbukkit latest RB with a kick!
+
+/smite [playername] - Smites a Player
+/smite - Smites [hits with lighting] and causes and explosion at the block you are looking at.
