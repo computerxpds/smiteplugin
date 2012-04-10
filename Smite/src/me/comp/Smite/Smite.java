@@ -31,10 +31,10 @@ public class Smite extends JavaPlugin {
 	   World world = player.getWorld();
 	   if(commandLabel.equalsIgnoreCase("smite")) {
 		   if(args.length == 0) {
-			   Block targetblock = player.getTargetBlock(null,  20);
+			   Block targetblock = player.getTargetBlock(null,  50);
 			   Location location = targetblock.getLocation();
 			   world.strikeLightning(location);
-			   world.createExplosion(location, 50);
+			   world.createExplosion(location, 20);
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
 				   Player targetplayer = player.getServer().getPlayer(args[0]);
