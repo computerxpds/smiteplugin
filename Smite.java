@@ -34,9 +34,9 @@ public class Smite extends JavaPlugin {
 			   Block targetblock = player.getTargetBlock(null,  50);
 			   Location location = targetblock.getLocation();
 			   world.strikeLightning(location);
-			   world.createExplosion(location, 0);
-			   //get "blast-radius" config, default to 10 if none set
-			   this.getConfig().set("blast-radius", true);
+			   //get "blast-radius" config, defualt to 10 if none set. Thanks to morganm for the help :) no good deed goes un-noticed
+			   int radius = getConfig().getInt("blast-radius", 10);
+			   world.createExplosion(location, radius);
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
 				   Player targetplayer = player.getServer().getPlayer(args[0]);
