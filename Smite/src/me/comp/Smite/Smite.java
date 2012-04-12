@@ -34,13 +34,18 @@ public class Smite extends JavaPlugin {
 			   Block targetblock = player.getTargetBlock(null,  50);
 			   Location location = targetblock.getLocation();
 			   world.strikeLightning(location);
-			   world.createExplosion(location, 20);
-			   //get "blast-radius" config, default to 10 if none set
+			   //get "blast-radius" config, defualt to 10 if none set. Thanks to morganm for the help :) no good deed goes un-noticed
+			   int radius = getConfig().getInt("blast-radius", 10);
+			   world.createExplosion(location, radius);
+			   //next line is for the player variable. /smite [playername] 
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
 				   Player targetplayer = player.getServer().getPlayer(args[0]);
 				   Location location = targetplayer.getLocation();
 				   world.strikeLightning(location);
+				   //get "blast-player" config, defualt to 0 if none set, set 0 to create no explosion. Thanks to morganm for the help :) no good deed goes un-noticed
+				   int radius = getConfig().getInt("blast-player", 0);
+				   world.createExplosion(location, radius);
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 			   } else {
 				   player.sendMessage(ChatColor.RED + "Error: The player is offline. ");
