@@ -15,6 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Smite extends JavaPlugin {
    public static Smite plugin;
    public final Logger logger = Logger.getLogger("Minecraft");
+   public String deathMessage = "Boom";
  
    public void onDisable() {
 	  PluginDescriptionFile pdffile = this.getDescription();
@@ -31,6 +32,7 @@ public class Smite extends JavaPlugin {
    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 	   Player player = (Player) sender;
 	   World world = player.getWorld();
+	   this.deathMessage = "boom";
 	   if(commandLabel.equalsIgnoreCase("smite")) {
 		   if(args.length == 0) {
 			   Block targetblock = player.getTargetBlock(null,  50);
