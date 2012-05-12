@@ -41,6 +41,9 @@ public class Smite extends JavaPlugin {
 			   //get "blast-radius" config, defualt to 10 if none set. Thanks to morganm for the help :) no good deed goes un-noticed
 			   int radius = getConfig().getInt("blast-radius", 10);
 			   world.createExplosion(location, radius);
+			   //To spawn a creeper no idea how this will work.. Will eventually include a var in the config.
+			   world.spawnCreature(location, org.bukkit.entity.EntityType.CREEPER);
+			   world.canGenerateStructures();
 			   //next line is for the player variable. /smite [playername] 
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
