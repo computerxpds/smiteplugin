@@ -3,6 +3,7 @@ package me.comp.Smite;
 import java.util.logging.Logger;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -53,6 +54,10 @@ public class Smite extends JavaPlugin {
 				   //get "blast-player" config, defualt to 0 if none set, set 0 to create no explosion. Thanks to morganm for the help :) no good deed goes un-noticed
 				   int radius = getConfig().getInt("blast-player", 0);
 				   world.createExplosion(location, radius);
+				   //Spawns pig zombie ~Comp
+				   world.spawnCreature(location, org.bukkit.entity.EntityType.PIG_ZOMBIE);
+				   //Shows spawner effect ~Comp
+				   world.playEffect(location, Effect.MOBSPAWNER_FLAMES, 0);
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 			   } else {
 				   player.sendMessage(ChatColor.RED + "Error: The player is offline. ");
