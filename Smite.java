@@ -62,10 +62,11 @@ public static Smite plugin;
 				   world.sendPluginMessage(plugin, deathMessage, Death);
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 			   } else {
-				   player.sendMessage(ChatColor.RED + "Error: The player is offline. ");
+				   player.sendMessage(ChatColor.RED + "Error: The player is offline please use a different player. ");
+				   getServer().broadcastMessage(getName());
 			   }
 		   } else if (args.length > 1) {
-			   player.sendMessage(ChatColor.RED + "Error: Too Many Arguments!");
+			   player.sendMessage(ChatColor.RED + "Error: Too Many Args!");
 		   }
 	   }
 	   return false;
