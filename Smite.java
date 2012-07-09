@@ -14,8 +14,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Smite extends JavaPlugin {
-   private static final byte[] Death = null;
-public static Smite plugin;
+   public static Smite plugin;
    public final Logger logger = Logger.getLogger("Minecraft");
    public String deathMessage = "Boom";
  
@@ -59,7 +58,6 @@ public static Smite plugin;
 				   world.spawnCreature(location, org.bukkit.entity.EntityType.PIG_ZOMBIE);
 				   //Shows spawner effect ~Comp ~Added in V3.0
 				   world.playEffect(location, Effect.MOBSPAWNER_FLAMES, 0);
-				   world.sendPluginMessage(plugin, deathMessage, Death);
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 			   } else {
 				   player.sendMessage(ChatColor.RED + "Error: The player is offline please use a different player. ");
