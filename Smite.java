@@ -10,6 +10,7 @@ import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -45,6 +46,7 @@ public class Smite extends JavaPlugin {
 			   //To spawn a creeper no idea how this will work.. Will eventually include a var in the config.
 			   world.spawnCreature(location, org.bukkit.entity.EntityType.CREEPER);
 			   world.spawnCreature(location, org.bukkit.entity.EntityType.PIG_ZOMBIE);
+			   world.createExplosion(location, radius, isEnabled());
 			   //next line is for the player variable. /smite [playername] ~added in V1.0
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
