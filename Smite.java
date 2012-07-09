@@ -59,9 +59,9 @@ public class Smite extends JavaPlugin {
 				   //Shows spawner effect ~Comp ~Added in V3.0
 				   world.playEffect(location, Effect.MOBSPAWNER_FLAMES, 0);
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
+				   getServer().broadcastMessage(getName());
 			   } else {
 				   player.sendMessage(ChatColor.RED + "Error: The player is offline please use a different player. ");
-				   getServer().broadcastMessage(getName());
 			   }
 		   } else if (args.length > 1) {
 			   player.sendMessage(ChatColor.RED + "Error: Too Many Args!");
