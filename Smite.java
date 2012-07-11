@@ -10,7 +10,6 @@ import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -37,6 +36,8 @@ public class Smite extends JavaPlugin {
 	   this.deathMessage = "boom";
 	   if(commandLabel.equalsIgnoreCase("smite")) {
 		   if(args.length == 0) {
+			   //permissions line, op only for now. ~Comp added v. 3.6P
+			   if(player.hasPermission("smite.ground")) {
 			   Block targetblock = player.getTargetBlock(null,  50);
 			   Location location = targetblock.getLocation();
 			   world.strikeLightning(location);
@@ -47,6 +48,9 @@ public class Smite extends JavaPlugin {
 			   world.spawnCreature(location, org.bukkit.entity.EntityType.CREEPER);
 			   world.spawnCreature(location, org.bukkit.entity.EntityType.PIG_ZOMBIE);
 			   world.createExplosion(location, radius, isEnabled());
+			   }else{
+				   player.sendMessage("You do not have permission to do this");
+			   }
 			   //next line is for the player variable. /smite [playername] ~added in V1.0
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {

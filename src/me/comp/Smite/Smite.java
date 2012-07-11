@@ -14,8 +14,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Smite extends JavaPlugin {
-   private static final byte[] Death = null;
-public static Smite plugin;
+   public static Smite plugin;
    public final Logger logger = Logger.getLogger("Minecraft");
    public String deathMessage = "Boom";
  
@@ -45,7 +44,7 @@ public static Smite plugin;
 			   world.createExplosion(location, radius);
 			   //To spawn a creeper no idea how this will work.. Will eventually include a var in the config.
 			   world.spawnCreature(location, org.bukkit.entity.EntityType.CREEPER);
-			   world.spawnCreature(location, org.bukkit.entity.EntityType.PIG_ZOMBIE);
+			   world.canGenerateStructures();
 			   //next line is for the player variable. /smite [playername] 
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
@@ -59,7 +58,6 @@ public static Smite plugin;
 				   world.spawnCreature(location, org.bukkit.entity.EntityType.PIG_ZOMBIE);
 				   //Shows spawner effect ~Comp
 				   world.playEffect(location, Effect.MOBSPAWNER_FLAMES, 0);
-				   world.sendPluginMessage(plugin, deathMessage, Death);
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 			   } else {
 				   player.sendMessage(ChatColor.RED + "Error: The player is offline. ");
