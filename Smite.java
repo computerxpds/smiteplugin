@@ -56,7 +56,7 @@ public class Smite extends JavaPlugin {
 			   if(player.getServer().getPlayer(args[0]) != null) {
 				   Player targetplayer = player.getServer().getPlayer(args[0]);
 				   Location location = targetplayer.getLocation();
-				   if(player.hasPermission("smite.player"))
+				   if(player.hasPermission("smite.player")) {
 				   world.strikeLightning(location);
 				   //get "blast-player" config, defualt to 0 if none set, set 0 to create no explosion. Thanks to morganm for the help :) no good deed goes un-noticed
 				   int radius = getConfig().getInt("blast-player", 0);
@@ -77,4 +77,6 @@ public class Smite extends JavaPlugin {
 	   }
 	   return false;
    }
+	return false;
    }
+}
