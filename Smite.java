@@ -68,6 +68,10 @@ public class Smite extends JavaPlugin {
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 				   //Should add in name on smite to broadcast to server~Comp V3.2 V3.3 added space
 				   getServer().broadcastMessage(ChatColor.RED + "Smiting Player " + targetplayer.getDisplayName());
+				   //Permission denied line. ~Comp
+				   }else{
+					   player.sendMessage(ChatColor.RED + "You do not have permission to do this");
+				   }
 			   } else {
 				   player.sendMessage(ChatColor.RED + "Error: The player is offline please use a different player. ");
 			   }
@@ -76,7 +80,5 @@ public class Smite extends JavaPlugin {
 		   }
 	   }
 	   return false;
-   }
-	return false;
    }
 }
