@@ -54,6 +54,7 @@ public class Smite extends JavaPlugin {
 			   //next line is for the player variable. /smite [playername] ~added in V1.0
 		   } else if (args.length == 1) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
+				   if(player.hasPermission("smite.player")) {
 				   Player targetplayer = player.getServer().getPlayer(args[0]);
 				   Location location = targetplayer.getLocation();
 				   world.strikeLightning(location);
