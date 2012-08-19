@@ -80,6 +80,8 @@ public class Smite extends JavaPlugin {
 				   Location locationthis = targetplayer.getLocation();
 				   if(player.hasPermission("smite.playerkill")) {
 					   world.createExplosion(locationthis, 1);
+					   world.setStorm(isEnabled());
+					   getServer().broadcastMessage(ChatColor.RED + "Killing This Player With DeathSmite: " + targetplayer.getDisplayName());
 				   }
 				   }
 						   
