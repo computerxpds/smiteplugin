@@ -1,0 +1,16 @@
+name: Smite
+main: me.comp.Smite.Smite
+version: 3.7
+description: >
+             My first smiting plugin.
+commands:
+  smite:
+    description: Lightning
+
+permissions:
+    smite.ground:
+        description: Allows you to hit the ground
+        default: op
+    smite.player:
+        description: Allows you to hit a player
+        default: op

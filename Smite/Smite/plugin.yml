@@ -1,0 +1,8 @@
+name: Smite
+main: me.comp.Smite.Smite
+version: 2.0
+description: >
+             My first smiting plugin.
+commands:
+  smite:
+    description: Lightning.
