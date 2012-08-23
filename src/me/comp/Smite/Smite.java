@@ -74,8 +74,8 @@ public class Smite extends JavaPlugin {
 				   getServer().broadcastMessage(ChatColor.RED + "Smiting Player " + targetplayer.getDisplayName());
 				   //Permission denied line. ~Comp
 				   //New feature in the works.. obv isnt finished yet but when it is this will ensure the player DIES when run.~Comp
-		   } else if (args.length == 2) {
-			   if(commandLabel.equalsIgnoreCase("smitekill")) {
+		   } else if (commandLabel.equalsIgnoreCase("smitekill")) {
+			   if(args.length == 0) {
 			   if(player.getServer().getPlayer(args[0]) != null) {
 				   Location locationthis = targetplayer.getLocation();
 				   if(player.hasPermission("smite.playerkill")) {
