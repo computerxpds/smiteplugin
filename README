@@ -1,6 +1,4 @@
-Simple smite plugin for Craftbukkit latest RB with a kick!
+Simple smite plugin for Craftbukkit latest RB with a kick! New features will be added as I progress.
 
 /smite [playername] - Smites a Player and creates and explosion of a predefind size in config, can be dissabled by setting to zero
 /smite - Smites [hits with lighting] and causes and explosion at the block you are looking at, explosion can be set in config the same way as the previous command.
-
-Wewt we hit version 3.0!
