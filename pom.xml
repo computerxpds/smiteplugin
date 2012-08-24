@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Smite</groupId>
   <artifactId>Smite</artifactId>
-  <version>4.0.1-SNAPSHOT</version>
+  <version>4.0.2-SNAPSHOT</version>
   <name>Smite</name>
   <description>Smite Plugin for bukkit minecraft
 </description>

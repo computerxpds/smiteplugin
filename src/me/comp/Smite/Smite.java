@@ -72,19 +72,7 @@ public class Smite extends JavaPlugin {
 				   player.sendMessage(ChatColor.GRAY + "Smiting Player " + targetplayer.getDisplayName());
 				   //Should add in name on smite to broadcast to server~Comp V3.2 V3.3 added space
 				   getServer().broadcastMessage(ChatColor.RED + "Smiting Player " + targetplayer.getDisplayName());
-				   //Permission denied line. ~Comp
-				   //New feature in the works.. obv isnt finished yet but when it is this will ensure the player DIES when run.~Comp
-		   } else if (commandLabel.equalsIgnoreCase("smitekill")) {
-			   if(args.length == 0) {
-			   if(player.getServer().getPlayer(args[0]) != null) {
-				   Location locationthis = targetplayer.getLocation();
-				   if(player.hasPermission("smite.playerkill")) {
-					   world.createExplosion(locationthis, 1);
-					   world.setStorm(isEnabled());
-					   getServer().broadcastMessage(ChatColor.RED + "Killing This Player With DeathSmite: " + targetplayer.getDisplayName());
-				   }
-				   }
-						   
+				   //Permission denied line. ~Comp   
 					   }
 				   }else{
 					   player.sendMessage(ChatColor.RED + "You do not have permission to do this");
@@ -95,7 +83,17 @@ public class Smite extends JavaPlugin {
 		   } else if (args.length > 1) {
 			   player.sendMessage(ChatColor.RED + "Error: Too Many Args!");
 		   }
-	   }
 	   return false;
    }
+   public boolean onCommand1(CommandSender sendernew, Command cmd, String commandLabelnew, String[] args) {
+	   Player player = (Player) sendernew;
+	   World world = player.getWorld();
+	   if(commandLabelnew.equalsIgnoreCase("skill")) {
+			   Block targetblock = player.getTargetBlock(null,  50);
+			   Location location = targetblock.getLocation();
+			   player.sendMessage("test succesful!");
+			   world.strikeLightning(location);
+		   }
+	return false; 
+	}
 }
