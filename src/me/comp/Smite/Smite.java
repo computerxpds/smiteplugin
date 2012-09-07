@@ -85,5 +85,4 @@ public class Smite extends JavaPlugin {
 		   }
 	   return false;
    }
-   
 }
