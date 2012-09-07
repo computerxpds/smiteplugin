@@ -1,6 +1,6 @@
 name: Smite
 main: me.comp.Smite.Smite
-version: 4.0.0
+version: ${project.version}
 description: >
              My first smiting plugin.
 commands:
