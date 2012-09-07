@@ -85,17 +85,5 @@ public class Smite extends JavaPlugin {
 		   }
 	   return false;
    }
-   public boolean onCommand1(CommandSender sendernew, Command cmd, String commandLabelnew, String[] args) {
-	   Player player = (Player) sendernew;
-	   World world = player.getWorld();
-	   if(commandLabelnew.equalsIgnoreCase("skill")) {
-		   if(args.length == 0) {
-			   Block targetblock = player.getTargetBlock(null,  50);
-			   Location location = targetblock.getLocation();
-			   player.sendMessage("test succesful!");
-			   world.strikeLightning(location);
-		   }
-		   }
-	return false; 
-	   }
+   
 }
