@@ -1,11 +1,13 @@
 name: Smite
 main: me.comp.Smite.Smite
-version: ${project.version}
+version: 5.0
 description: >
              My first smiting plugin.
 commands:
   smite:
     description: Lightning
+  smitekill:
+    description: kills a player
 
 permissions:
     smite.ground:
