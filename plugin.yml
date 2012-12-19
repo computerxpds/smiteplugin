@@ -1,5 +1,5 @@
 name: Smite
-main: me.comp.Smite.Smite
+main: me.comp.smite.Smite
 version: ${project.version}
 description: >
              My first smiting plugin.
