@@ -25,13 +25,4 @@
       <url>http://repo.bukkit.org/content/groups/public/</url>
     </repository>
     </repositories>
-    <resources>
-      <resource>
-        <directory>${basedir}/src/main/resources</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>plugin.yml</include>
-        </includes>
-      </resource>
-      </resources>
 </project>
