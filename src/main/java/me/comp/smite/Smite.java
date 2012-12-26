@@ -28,6 +28,7 @@ public class Smite extends JavaPlugin {
 	  this.logger.info(pdffile.getName() + "is now enabled.");
 	  getConfig().options().copyDefaults(true);
 	  this.saveDefaultConfig();
+	  getServer().getPluginManager().registerEvents(new PlayerListener(), this);
    }
 
    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
